@@ -1,0 +1,108 @@
+<form [formGroup]="emailTemplate">
+  <div id="body">
+    <p>
+      <label for="name">Your Name: </label>
+      <input
+        [class.valid]="emailTemplate.get('name').valid"
+        type="text"
+        id="name"
+        formControlName="name"
+      />
+    </p>
+    <p>
+      <label for="advName">Adviser Name: </label>
+      <input
+        [class.valid]="emailTemplate.get('advName').valid"
+        type="text"
+        id="advName"
+        formControlName="advName"
+      />
+    </p>
+    <p>
+      <label for="advEmail">Adviser Email: </label>
+      <input
+        [class.valid]="emailTemplate.get('advEmail').valid"
+        type="email"
+        id="advEmail"
+        formControlName="advEmail"
+      />
+    </p>
+    <p>
+      <label for="plan">Plan Number: </label>
+      <input
+        [class.valid]="emailTemplate.get('plan').valid"
+        type="text"
+        id="plan"
+        formControlName="plan"
+      />
+    </p>
+    <p>
+      <label for="surname">Client Surname: </label>
+      <input
+        [class.valid]="emailTemplate.get('surname').valid"
+        type="text"
+        id="surname"
+        formControlName="surname"
+      />
+    </p>
+    <div id="buttonDiv">
+      <p>
+        <button
+          style="width:30%"
+          [class.validButton]="emailTemplate.get('type').value === 'new'"
+          (click)="setVal('type', 'new')"
+        >
+          New
+        </button>
+        <button
+          style="width:30%"
+          [class.validButton]="emailTemplate.get('type').value === 'amend'"
+          (click)="setVal('type', 'amend')"
+        >
+          Amend
+        </button>
+        <button
+          style="width:30%"
+          [class.validButton]="emailTemplate.get('type').value === 'stop'"
+          (click)="setVal('type', 'stop')"
+        >
+          Stop
+        </button>
+      </p>
+    </div>
+    <!--     <div id="buttonDiv" hidden>
+      <p>
+        <button (click)="setVal('type', '1')">Single</button>
+        <button (click)="setVal('type', '0')">Regular</button>
+      </p>
+    </div>
+    <div id="buttonDiv" hidden>
+      <p>
+        <button (click)="setVal('asap', 1)">ASAP</button>
+        <button (click)="setVal('asap', 0)">Choose Date</button>
+      </p>
+    </div> -->
+    <p>
+      <label for="payDate">Payment Expected On: </label>
+      <input
+        [class.valid]="emailTemplate.get('payDate').valid"
+        type="date"
+        id="payDate"
+        formControlName="payDate"
+      />
+    </p>
+    <div id="buttonDiv">
+      <p>
+        <button (click)="createEmail()" [disabled]="!emailTemplate.valid">
+          Create Email
+        </button>
+        <button
+          (click)="resetForm()"
+          [class.resetReady]="emailTemplate.get('emailCreated').value === true"
+        >
+          Reset Form
+        </button>
+      </p>
+    </div>
+  </div>
+</form>
