@@ -4,9 +4,9 @@
 }
 
 #body {
-  border: 1px solid grey;
+  border: 5px solid lightgrey;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px rgb(168, 168, 168);
+  /* box-shadow: 3px 3px 5px rgb(168, 168, 168); */
   width: 450px;
   padding: 10px;
   color: rgb(0, 0, 0);
@@ -30,7 +30,7 @@ input {
 }
 
 button {
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(255, 255, 255);
   border: 2px solid lightgrey;
   border-radius: 4px;
   width: 46%;
@@ -38,10 +38,6 @@ button {
   margin: 0 5px;
   font-size: 1em;
 }
-
-/* button:active {
-  background: white;
-} */
 
 #buttonDiv {
   text-align: center;

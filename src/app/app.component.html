@@ -28,7 +28,7 @@
       />
     </p>
     <p>
-      <label for="plan">Plan Number: </label>
+      <label for="plan">Policy Number: </label>
       <input
         [class.valid]="emailTemplate.get('plan').valid"
         type="text"
@@ -45,7 +45,8 @@
         formControlName="surname"
       />
     </p>
-    <div id="buttonDiv">
+    <div id="buttonDiv" style="background:lightgrey;padding: 5px">
+      <label for="surname">Payment Type: </label>
       <p>
         <button
           style="width:30%"
@@ -70,18 +71,6 @@
         </button>
       </p>
     </div>
-    <!--     <div id="buttonDiv" hidden>
-      <p>
-        <button (click)="setVal('type', '1')">Single</button>
-        <button (click)="setVal('type', '0')">Regular</button>
-      </p>
-    </div>
-    <div id="buttonDiv" hidden>
-      <p>
-        <button (click)="setVal('asap', 1)">ASAP</button>
-        <button (click)="setVal('asap', 0)">Choose Date</button>
-      </p>
-    </div> -->
     <p>
       <label for="payDate">Payment Expected On: </label>
       <input
@@ -93,7 +82,11 @@
     </p>
     <div id="buttonDiv">
       <p>
-        <button (click)="createEmail()" [disabled]="!emailTemplate.valid">
+        <button
+          (click)="createEmail()"
+          [disabled]="!emailTemplate.valid"
+          title="You can't click this until the form is fully completed. Click a 'payment type' to complete the form."
+        >
           Create Email
         </button>
         <button
