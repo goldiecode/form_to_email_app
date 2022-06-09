@@ -51,8 +51,8 @@ export class AppComponent {
     const name = d.name;
     const advName = d.advName;
     const advEmail = d.advEmail;
-    const plan = d.plan.toUpperCase();
-    const surname = d.surname.toUpperCase();
+    const plan = d.plan.toUpperCase(); // Uppercase to standardise the output
+    const surname = d.surname.toUpperCase(); // Uppercase to standardise the output
     const type = d.type;
     const date = d.payDate;
     const dateFormatted = formatDate(date, 'd MMMM, y.', 'en-GB');
