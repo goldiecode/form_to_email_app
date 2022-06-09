@@ -12,7 +12,7 @@ export class AppComponent {
   emailTemplate = this.fb.group({
     name: ['John', Validators.required],
     advName: ['Robert', Validators.required],
-    advEmail: ['random@company.com', [Validators.required, Validators.email]],
+    advEmail: ['adviser@example.com', [Validators.required, Validators.email]],
     plan: ['X123', Validators.required],
     surname: ['Smith', Validators.required],
     type: ['', Validators.required],
